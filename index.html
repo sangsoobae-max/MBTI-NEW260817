@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수험생 심리상담 & MBTI 성향 진단 | 에듀케어 멘탈케어</title>
+  <meta name="description" content="수험생 맞춤형 심리상담 및 MBTI 성향 진단을 통해 학습 멘탈을 케어하고 합격 전략을 처방받으세요.">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts: Pretendard & Outfit -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- html2canvas for result card download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" role="alert" aria-live="polite"></div>
+
+  <main class="app-container">
+    <!-- Header Brand -->
+    <header class="app-header">
+      <div class="brand-badge">
+        <span class="pulse-dot"></span>
+        <span>2026 MENTAL CARE &amp; MBTI SOLUTION</span>
+      </div>
+      <h1 class="brand-title">수험생 심리상담 &amp; MBTI 진단</h1>
+      <p class="brand-desc">시험 스트레스 해소부터 맞춤형 합격 학습 처방전까지</p>
+    </header>
+
+    <!-- SECTION 1: LANDING VIEW (User Info Input) -->
+    <section id="view-landing" class="view active">
+      <div class="card glass-card landing-card">
+        <div class="card-hero-icon">
+          <i class="fa-solid fa-brain-circuit neon-icon"></i>
+        </div>
+        <h2 class="card-title">수험생 진단 사전 등록</h2>
+        <p class="card-subtitle">정확한 심리 분석과 맞춤 상담 리포트 발송을 위해 기본 정보를 입력해 주세요.</p>
+        
+        <form id="user-info-form" class="info-form" novalidate>
+          <div class="form-group">
+            <label for="input-name">
+              <i class="fa-regular fa-user"></i> 이름 (수험생 성함) <span class="required">*</span>
+            </label>
+            <input type="text" id="input-name" name="name" placeholder="홍길동" required autocomplete="name">
+            <span class="error-msg" id="err-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="input-phone">
+              <i class="fa-solid fa-mobile-screen"></i> 핸드폰 번호 <span class="required">*</span>
+            </label>
+            <input type="tel" id="input-phone" name="phone" placeholder="010-1234-5678" maxlength="13" required autocomplete="tel">
+            <span class="error-msg" id="err-phone"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="input-address">
+              <i class="fa-solid fa-location-dot"></i> 거주지 주소 (시/군/구) <span class="required">*</span>
+            </label>
+            <input type="text" id="input-address" name="address" placeholder="예: 서울시 강남구 역삼동" required autocomplete="street-address">
+            <span class="error-msg" id="err-address"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="input-email">
+              <i class="fa-regular fa-envelope"></i> 이메일 주소 (결과 리포트 수신) <span class="required">*</span>
+            </label>
+            <input type="email" id="input-email" name="email" placeholder="example@naver.com" required autocomplete="email">
+            <span class="error-msg" id="err-email"></span>
+          </div>
+
+          <div class="privacy-notice">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>입력하신 개인정보는 심리상담 진단 및 결과 통보 목적으로만 안전하게 사용됩니다.</span>
+          </div>
+
+          <button type="submit" id="btn-start-test" class="btn btn-primary btn-glow">
+            <span>테스트 시작하기</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Feature Badges -->
+      <div class="feature-grid">
+        <div class="feature-item">
+          <i class="fa-solid fa-feather-pointed"></i>
+          <div>
+            <h4>10개 심층 문항</h4>
+            <p>수험 환경을 정밀 반영한 진단</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <div>
+            <h4>16개 맞춤 캐릭터</h4>
+            <p>퍼스널 컬러 &amp; 멘탈 처방전</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-cloud-arrow-down"></i>
+          <div>
+            <h4>결과 카드 저장</h4>
+            <p>고화질 이미지 즉시 다운로드</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TRANSITION LOADING (Mind Relaxing Animation) -->
+    <section id="view-relax" class="view" aria-hidden="true">
+      <div class="card glass-card relax-card">
+        <div class="relax-circle">
+          <div class="relax-ring relax-ring-1"></div>
+          <div class="relax-ring relax-ring-2"></div>
+          <div class="relax-icon-wrap">
+            <i class="fa-solid fa-spa relax-icon"></i>
+          </div>
+        </div>
+        <h3 class="relax-title">잠시 마음을 가다듬는 중...</h3>
+        <p class="relax-quote" id="relax-quote">"천천히 숨을 들이쉬고, 편안한 마음으로 답해주세요."</p>
+        <div class="relax-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: QUIZ FLOW VIEW -->
+    <section id="view-quiz" class="view" aria-hidden="true">
+      <div class="quiz-header-bar">
+        <div class="quiz-progress-info">
+          <span class="quiz-step-badge" id="quiz-step-badge">Q. 01 / 10</span>
+          <span class="quiz-percent" id="quiz-percent">10%</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-fill" id="progress-fill" style="width: 10%;"></div>
+        </div>
+      </div>
+
+      <div class="card glass-card quiz-card" id="quiz-card">
+        <div class="question-header">
+          <span class="q-tag" id="q-category">수험 동기 &amp; 진로</span>
+          <h2 class="q-title" id="q-title">질문 로딩 중...</h2>
+        </div>
+
+        <div class="options-container" id="options-container">
+          <!-- Options will be dynamically rendered -->
+        </div>
+
+        <div class="quiz-footer">
+          <span class="quiz-tip">
+            <i class="fa-regular fa-lightbulb"></i> 가장 마음에 와닿거나 평소 나의 모습에 가까운 보기를 선택해 주세요.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: RESULT VIEW -->
+    <section id="view-result" class="view" aria-hidden="true">
+      <!-- Loading indicator while saving to Google Sheets -->
+      <div id="result-saving-bar" class="result-saving-bar">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <span>진단 결과를 분석 서버에 안전하게 동기화 중입니다...</span>
+      </div>
+
+      <!-- Result Card for Capture & View -->
+      <div class="card glass-card result-card" id="capture-result-card">
+        <div class="result-card-header">
+          <div class="examinee-tag">
+            <span class="user-badge" id="res-user-name">수험생</span> 님의 진단 결과
+          </div>
+          <div class="personal-color-pill" id="res-color-pill">
+            <span class="color-dot" id="res-color-dot"></span>
+            <span id="res-color-name">네이비 블루</span>
+          </div>
+        </div>
+
+        <div class="result-hero">
+          <div class="character-avatar" id="res-avatar-wrap">
+            <i class="fa-solid fa-chess-queen" id="res-char-icon"></i>
+          </div>
+          <div class="mbti-type-badge" id="res-mbti-type">INTJ</div>
+          <h2 class="character-title" id="res-char-title">철두철미한 승부사</h2>
+          <p class="character-summary" id="res-char-summary">
+            체계적인 마스터 플랜으로 난관을 극복하는 전략적 브레인
+          </p>
+        </div>
+
+        <!-- Trait Score Graph -->
+        <div class="trait-bars-container">
+          <h4 class="section-subheading">
+            <i class="fa-solid fa-chart-simple"></i> 세부 성향 지표
+          </h4>
+          <div class="trait-row">
+            <span class="trait-label" id="trait-ei-left">외향 (E)</span>
+            <div class="trait-track">
+              <div class="trait-fill-left" id="fill-e"></div>
+              <div class="trait-fill-right" id="fill-i"></div>
+            </div>
+            <span class="trait-label" id="trait-ei-right">내향 (I)</span>
+          </div>
+          <div class="trait-row">
+            <span class="trait-label" id="trait-sn-left">감각 (S)</span>
+            <div class="trait-track">
+              <div class="trait-fill-left" id="fill-s"></div>
+              <div class="trait-fill-right" id="fill-n"></div>
+            </div>
+            <span class="trait-label" id="trait-sn-right">직관 (N)</span>
+          </div>
+          <div class="trait-row">
+            <span class="trait-label" id="trait-tf-left">사고 (T)</span>
+            <div class="trait-track">
+              <div class="trait-fill-left" id="fill-t"></div>
+              <div class="trait-fill-right" id="fill-f"></div>
+            </div>
+            <span class="trait-label" id="trait-tf-right">감정 (F)</span>
+          </div>
+          <div class="trait-row">
+            <span class="trait-label" id="trait-jp-left">판단 (J)</span>
+            <div class="trait-track">
+              <div class="trait-fill-left" id="fill-j"></div>
+              <div class="trait-fill-right" id="fill-p"></div>
+            </div>
+            <span class="trait-label" id="trait-jp-right">인식 (P)</span>
+          </div>
+        </div>
+
+        <!-- Psychological Analysis -->
+        <div class="analysis-box">
+          <h4 class="box-title">
+            <i class="fa-solid fa-heart-pulse"></i> 현재 심리 및 수험 성향 분석
+          </h4>
+          <p class="box-content" id="res-psych-desc">
+            현재 목표를 향한 의지가 높으나 스스로에게 지나치게 엄격해져 번아웃 위험이 있습니다.
+          </p>
+        </div>
+
+        <!-- Strategy Prescription -->
+        <div class="analysis-box prescription-box">
+          <h4 class="box-title">
+            <i class="fa-solid fa-capsules"></i> 수험생 맞춤 멘탈 케어 &amp; 합격 처방
+          </h4>
+          <ul class="prescription-list" id="res-prescription-list">
+            <li>단기적 휴식 루틴을 일정표에 공식 배치하세요.</li>
+            <li>결과보다는 오늘 하루 달성한 루틴에 스스로 칭찬해 주세요.</li>
+          </ul>
+        </div>
+
+        <!-- Study Boost Cards -->
+        <div class="boost-grid">
+          <div class="boost-card">
+            <i class="fa-solid fa-headphones-simple"></i>
+            <div>
+              <span class="boost-label">추천 백색소음</span>
+              <strong id="res-boost-sound">딥 포커스 로파이</strong>
+            </div>
+          </div>
+          <div class="boost-card">
+            <i class="fa-solid fa-clover"></i>
+            <div>
+              <span class="boost-label">행운의 수험 아이템</span>
+              <strong id="res-boost-item">그린 티 &amp; 포스트잇</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-watermark">
+          <span>EduCare MBTI Mental Solution &copy; 2026</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-btn-group">
+        <button type="button" id="btn-download-image" class="btn btn-primary btn-glow">
+          <i class="fa-solid fa-download"></i>
+          <span>결과 카드 이미지 다운로드</span>
+        </button>
+        <button type="button" id="btn-share-link" class="btn btn-secondary">
+          <i class="fa-solid fa-link"></i>
+          <span>진단 링크 복사하기</span>
+        </button>
+        <button type="button" id="btn-restart-test" class="btn btn-outline">
+          <i class="fa-solid fa-rotate-right"></i>
+          <span>다시 테스트하기</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>본 심리상담 진단 도구는 수험생의 학습 스트레스 완화 및 자기이해를 돕기 위해 제작되었습니다.</p>
+    <p>&copy; 2026 EduCare Mental Lab. All rights reserved.</p>
+  </footer>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
