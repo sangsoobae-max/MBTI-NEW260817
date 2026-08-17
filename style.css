@@ -29,6 +29,7 @@
   
   --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
   --gradient-violet: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+  --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
   --gradient-card: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
   --gradient-border: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
   
@@ -41,6 +42,7 @@
   --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
   --shadow-neon: 0 0 25px rgba(56, 189, 248, 0.35);
+  --shadow-violet: 0 0 25px rgba(139, 92, 246, 0.35);
   
   --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Outfit', 'Plus Jakarta Sans', var(--font-sans);
@@ -346,8 +348,8 @@ body {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  padding: 15px 24px;
-  font-size: 1rem;
+  padding: 14px 22px;
+  font-size: 0.96rem;
   font-weight: 700;
   font-family: inherit;
   border-radius: var(--radius-md);
@@ -368,6 +370,20 @@ body {
 }
 
 .btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-email {
+  background: var(--gradient-violet);
+  color: #ffffff;
+}
+
+.btn-email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.45);
+}
+
+.btn-email:active {
   transform: translateY(0);
 }
 
@@ -1024,6 +1040,12 @@ body {
   margin-top: 24px;
 }
 
+.main-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 /* Toast Notifications */
 .toast-container {
   position: fixed;
@@ -1085,6 +1107,11 @@ body {
 
   .glass-card {
     padding: 24px 18px;
+  }
+
+  .main-action-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .feature-grid {
